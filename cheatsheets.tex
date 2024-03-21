@@ -104,7 +104,7 @@
 \setlength\parindent{0pt}
 \setlength{\tabcolsep}{2pt}
 \baselineskip=0pt
-\setlength\columnsep{0.5em}
+\setlength\columnsep{1.75mm}
 
 
 % --- Macros ------------------------------------------------------------------
@@ -264,7 +264,7 @@
 \begin{multicols*}{5}
   \begin{overpic}[width=\columnwidth,tics=6,trim=12 6 18 6, clip]{logo2.png}
     \put (16.5,1.5) {\scriptsize\RobotoCon \textcolor[HTML]{11557c}{Cheat sheet}}
-    \put (80,1.5) {\tiny\Roboto \textcolor[HTML]{11557c}{Version 3.5.0}}
+    \put (80,1.5) {\tiny\Roboto \textcolor[HTML]{11557c}{Version 3.7.4}}
    \end{overpic}
   %\textbf{\Large \RobotoCon Matplotlib 3.2 cheat sheet}\\
   %{\ttfamily https://matplotlib.org} \hfill CC-BY 4.0
@@ -289,7 +289,7 @@
   ax.plot(X, Y, color='green')\\
   \\
   fig.savefig(``figure.pdf'')\\
-  fig.show() }
+  plt.show() }
   \end{myboxed}
   \vspace{\fill}
 
@@ -301,13 +301,13 @@
   % --- Layout ---------------------------------------------------------------
   \begin{myboxed}{Subplots layout \hfill
       \API{https://matplotlib.org/tutorials/intermediate/gridspec.html} }
-  \plot{layout-subplot.pdf}{\textbf{subplot[s]}(rows,cols,…)}
+  \plot{layout-subplot.pdf}{\textbf{subplot[s]}(rows, cols, …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html}
        {\ttfamily fig, axs = plt.subplots(3, 3)}
        {}
-  \plot{layout-gridspec.pdf}{G = \textbf{gridspec}(rows,cols,…)}
+  \plot{layout-gridspec.pdf}{G = \textbf{gridspec}(rows,cols, …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.gridspec.GridSpec.html}
-       {\ttfamily ax = G[0,:]}{}
+       {\ttfamily ax = G[0, :]}{}
   \plot{layout-inset.pdf}{ax.\textbf{inset\_axes}(extent)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.inset_axes.html}
        {}{}
@@ -328,7 +328,7 @@
     \href{https://stackoverflow.com/questions/tagged/matplotlib}
          {\faIcon{stack-overflow}\,stackoverflow.com/questions/tagged/matplotlib}\\
     \href{https://gitter.im/matplotlib/matplotlib}
-         {\faIcon{gitter}\,gitter.im/matplotlib}\\
+         {\faIcon{gitter}\,{https://gitter.im/matplotlib/matplotlib}}\\
     \href{https://twitter.com/matplotlib}
          {\faIcon{twitter}\,twitter.com/matplotlib}\\
     \href{https://mail.python.org/mailman/listinfo/matplotlib-users}
@@ -338,7 +338,7 @@
 
   % --- Basic plots -----------------------------------------------------------
   \begin{myboxed}{Basic plots}
-  \plot{basic-plot.pdf}{\textbf{plot}([X],Y,[fmt],…)}
+  \plot{basic-plot.pdf}{\textbf{plot}([X], Y, [fmt], …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html}
        {\optional{X},
         \mandatory{Y},
@@ -347,7 +347,7 @@
         \optional{marker},
         \optional{linestyle}}
        {}
-  \plot{basic-scatter.pdf}{\textbf{scatter}(X,Y,…)}
+  \plot{basic-scatter.pdf}{\textbf{scatter}(X, Y, …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html}
        {\mandatory{X},
         \mandatory{Y},
@@ -356,7 +356,7 @@
         \optional{marker},
         \optional{cmap}}
        {}
-  \plot{basic-bar.pdf}{\textbf{bar[h]}(x,height,…)}
+  \plot{basic-bar.pdf}{\textbf{bar[h]}(x, height, …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html}
        { \mandatory{x},
          \mandatory{height},
@@ -364,7 +364,7 @@
          \optional{bottom},
          \optional{align},
          \optional{color} }{}
-  \plot{basic-imshow.pdf}{\textbf{imshow}(Z,…)}
+  \plot{basic-imshow.pdf}{\textbf{imshow}(Z, …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html}
        { \mandatory{Z},
          \optional{cmap},
@@ -372,7 +372,7 @@
          \optional{extent},
          \optional{origin} }
        {}
-  \plot{basic-contour.pdf}{\textbf{contour[f]}([X],[Y],Z,…)}
+  \plot{basic-contour.pdf}{\textbf{contour[f]}([X], [Y], Z, …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.contour.html}
        { \optional{X},
          \optional{Y},
@@ -382,7 +382,7 @@
          \optional{extent},
          \optional{origin} }
        {}
-  \plot{basic-pcolormesh.pdf}{\textbf{pcolormesh}([X],[Y],Z,…)}
+  \plot{basic-pcolormesh.pdf}{\textbf{pcolormesh}([X], [Y], Z, …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pcolormesh.html}
        { \optional{X},
          \optional{Y},
@@ -391,7 +391,7 @@
          \optional{vmax},
          \optional{cmap}}
        {}
-  \plot{basic-quiver.pdf}{\textbf{quiver}([X],[Y],U,V,…)}
+  \plot{basic-quiver.pdf}{\textbf{quiver}([X], [Y], U, V, …)}
      {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.quiver.html}
      { \optional{X},
        \optional{Y},
@@ -401,7 +401,7 @@
        \optional{units},
        \optional{angles} }
      {}
-  \plot{basic-pie.pdf}{\textbf{pie}(X,…)}
+  \plot{basic-pie.pdf}{\textbf{pie}(X, …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pie.html}
        {\mandatory{Z},
          \optional{explode},
@@ -409,7 +409,7 @@
          \optional{colors},
          \optional{radius}}
        {}
-   \plot{basic-text.pdf}{\textbf{text}(x,y,text,…)}
+   \plot{basic-text.pdf}{\textbf{text}(x, y, text, …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html}
        {\mandatory{x},
         \mandatory{y},
@@ -432,7 +432,7 @@
   \vspace{\fill}
   % --- Advanced plots --------------------------------------------------------
   \begin{myboxed}{Advanced plots}
-  \plot{advanced-step.pdf}{\textbf{step}(X,Y,[fmt],…)}
+  \plot{advanced-step.pdf}{\textbf{step}(X, Y, [fmt], …)}
      {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.step.html}
      {\mandatory{X},
       \mandatory{Y},
@@ -441,7 +441,7 @@
       \optional{marker},
       \optional{where} }
      {}
-  \plot{advanced-boxplot.pdf}{\textbf{boxplot}(X,…)}
+  \plot{advanced-boxplot.pdf}{\textbf{boxplot}(X, …)}
      {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html}
      { \mandatory{X},
        \optional{notch},
@@ -449,7 +449,7 @@
        \optional{bootstrap},
        \optional{widths} }
      {}
-  \plot{advanced-errorbar.pdf}{\textbf{errorbar}(X,Y,xerr,yerr,…)}
+  \plot{advanced-errorbar.pdf}{\textbf{errorbar}(X,Y,xerr,yerr, …)}
      {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html}
      { \mandatory{X},
        \mandatory{Y},
@@ -465,14 +465,14 @@
       \optional{density},
       \optional{weights}}
      {}
-  \plot{advanced-violin.pdf}{\textbf{violinplot}(D,…)}
+  \plot{advanced-violin.pdf}{\textbf{violinplot}(D, …)}
      {https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.violinplot.html}
      {\mandatory{D},
       \optional{positions},
       \optional{widths},
       \optional{vert} }
      {}
-  \plot{advanced-barbs.pdf}{\textbf{barbs}([X],[Y], U, V, …)}
+  \plot{advanced-barbs.pdf}{\textbf{barbs}([X], [Y], U, V, …)}
      {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barbs.html}
      { \optional{X},
        \optional{Y},
@@ -483,13 +483,13 @@
        \optional{pivot},
        \optional{sizes} }
      {}
-  \plot{advanced-event.pdf}{\textbf{eventplot}(positions,…)}
+  \plot{advanced-event.pdf}{\textbf{eventplot}(positions, …)}
      {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.eventplot.html}
      {\mandatory{positions},
        \optional{orientation},
        \optional{lineoffsets} }
      {}
-  \plot{advanced-hexbin.pdf}{\textbf{hexbin}(X,Y,C,…)}
+  \plot{advanced-hexbin.pdf}{\textbf{hexbin}(X, Y, C, …)}
      {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hexbin.html}
      {\mandatory{X},
       \mandatory{Y},
@@ -503,7 +503,7 @@
   % --- Scale ---------------------------------------------------------------
   \begin{myboxed}{Scales \hfill
     \API{https://matplotlib.org/stable/api/scale_api.html}}
-  {\ttfamily ax.\textbf{set\_[xy]scale}(scale,…)}
+  {\ttfamily ax.\textbf{set\_[xy]scale}(scale, …)}
   \smallskip
   \scale{scale-linear.pdf}{\textbf{linear}}{any values}
   \scale{scale-log.pdf}{\textbf{log}}{values > 0}
@@ -516,20 +516,14 @@
   % --- Projections -----------------------------------------------------------
   \begin{myboxed}{Projections \hfill
       \API{https://matplotlib.org/stable/api/projections_api.html}}
-  {\ttfamily \textbf{subplot}(…,projection=p)}
+  {\ttfamily \textbf{subplot}(…, projection=p)}
   \smallskip
   \scale{projection-polar.pdf}{p='polar'}{}
-  \scale{projection-3d.pdf}{p='3d'}{}
-%       {https://matplotlib.org/stable/api/projections_api.html}
-%       {}
-%       {}
-  %% \plot{projection-3d.pdf}{p='3d'}
-  %%      {https://matplotlib.org/stable/api/toolkits/mplot3d.html}
-  %%      {}
-  %%      {}
-  \plot{projection-cartopy.pdf}{p=Orthographic()}
-       {https://matplotlib.org/stable/api/toolkits/mplot3d.html}
-       {from cartopy.crs import Cartographic}
+  \scale{projection-3d.pdf}
+      {p='3d'\hfill\api{https://matplotlib.org/stable/api/toolkits/mplot3d.html}}{}
+  \plot{projection-cartopy.pdf}{p=ccrs.Orthographic()}
+       {https://scitools.org.uk/cartopy/docs/latest/reference/projections.html}
+       {import cartopy.crs as ccrs}
        {}
   \end{myboxed}
   %
@@ -688,19 +682,11 @@
     \fbox{\includegraphics[width=.32\columnwidth]{style-classic.pdf}}
     \fbox{\includegraphics[width=.32\columnwidth]{style-grayscale.pdf}}
     \fbox{\includegraphics[width=.32\columnwidth]{style-ggplot.pdf}}
-    \fbox{\includegraphics[width=.32\columnwidth]{style-seaborn.pdf}}
+    \fbox{\includegraphics[width=.32\columnwidth]{style-seaborn-v0_8.pdf}}
     \fbox{\includegraphics[width=.32\columnwidth]{style-fast.pdf}}
     \fbox{\includegraphics[width=.32\columnwidth]{style-bmh.pdf}}
     \fbox{\includegraphics[width=.32\columnwidth]{style-Solarize_Light2.pdf}}
-    \fbox{\includegraphics[width=.32\columnwidth]{style-seaborn-notebook.pdf}}
-    %% \fbox{\includegraphics[width=.24\columnwidth]{style-default.pdf}}
-    %% \fbox{\includegraphics[width=.24\columnwidth]{style-classic.pdf}}
-    %% \fbox{\includegraphics[width=.24\columnwidth]{style-grayscale.pdf}}
-    %% \fbox{\includegraphics[width=.24\columnwidth]{style-ggplot.pdf}}
-    %% \fbox{\includegraphics[width=.24\columnwidth]{style-seaborn.pdf}}
-    %% \fbox{\includegraphics[width=.24\columnwidth]{style-fast.pdf}}
-    %% \fbox{\includegraphics[width=.24\columnwidth]{style-bmh.pdf}}
-    %% \fbox{\includegraphics[width=.24\columnwidth]{style-Solarize_Light2.pdf}}
+    \fbox{\includegraphics[width=.32\columnwidth]{style-seaborn-v0_8-notebook.pdf}}
   \end{myboxed}
   %
   \vspace{\fill}
@@ -760,16 +746,16 @@
   %
   \begin{myboxed}{Ten simple rules \hfill
       \READ{https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833}}
-    1. Know Your Audience\\
-    2. Identify Your Message\\
-    3. Adapt the Figure\\
-    4. Captions Are Not Optional\\
-    5. Do Not Trust the Defaults\\
-    6. Use Color Effectively\\
-    7. Do Not Mislead the Reader\\
-    8. Avoid “Chartjunk”\\
-    9. Message Trumps Beauty\\
-    10. Get the Right Tool
+    1. Know your audience\\
+    2. Identify your message\\
+    3. Adapt the figure\\
+    4. Captions are not optional\\
+    5. Do not trust the defaults\\
+    6. Use color effectively\\
+    7. Do not mislead the reader\\
+    8. Avoid “chartjunk”\\
+    9. Message trumps beauty\\
+    10. Get the right tool
   \end{myboxed}
 \end{multicols*}
 
@@ -920,7 +906,7 @@
 
   \begin{myboxed}{Legend placement}
     \includegraphics[width=\columnwidth]{legend-placement.pdf}
-    ax.\textbf{legend}(loc="string", bbox\_to\_anchor=(x,y))\\
+    ax.\textbf{legend}(loc="string", bbox\_to\_anchor=(x, y))\\
     \begin{tabular}{@{}p{0.33\columnwidth}
                        p{0.33\columnwidth}
                        p{0.33\columnwidth}@{}}
@@ -933,12 +919,12 @@
     \begin{tabular}{@{}p{0.495\columnwidth}
                        p{0.495\columnwidth}@{}}
       \scriptsize \rule{0pt}{1.25em}\noindent
-      \tiny A: upper right /  {\ttfamily (-0.1,0.9)} & \tiny B: center right / {\ttfamily (-0.1,0.5)}\\
-      \tiny C: lower right /  {\ttfamily (-0.1,0.1)} & \tiny D: upper left /   {\ttfamily (0.1,-0.1)}\\
-      \tiny E: upper center / {\ttfamily (0.5,-0.1)} & \tiny F: upper right /  {\ttfamily (0.9,-0.1)}\\
-      \tiny G: lower left /   {\ttfamily (1.1,0.1)} & \tiny H: center left /  {\ttfamily (1.1,0.5)}\\
-      \tiny I: upper left /   {\ttfamily (1.1,0.9)} & \tiny J: lower right /  {\ttfamily (0.9,1.1)}\\
-      \tiny K: lower center / {\ttfamily (0.5,1.1)} & \tiny L: lower left /   {\ttfamily (0.1,1.1)}
+      \tiny A: upper right /  {\ttfamily (-0.1, 0.9)} & \tiny B: center right / {\ttfamily (-0.1, 0.5)}\\
+      \tiny C: lower right /  {\ttfamily (-0.1, 0.1)} & \tiny D: upper left /   {\ttfamily (0.1, -0.1)}\\
+      \tiny E: upper center / {\ttfamily (0.5, -0.1)} & \tiny F: upper right /  {\ttfamily (0.9, -0.1)}\\
+      \tiny G: lower left /   {\ttfamily (1.1, 0.1)} & \tiny H: center left /  {\ttfamily (1.1, 0.5)}\\
+      \tiny I: upper left /   {\ttfamily (1.1, 0.9)} & \tiny J: lower right /  {\ttfamily (0.9, 1.1)}\\
+      \tiny K: lower center / {\ttfamily (0.5, 1.1)} & \tiny L: lower left /   {\ttfamily (0.1, 1.1)}
     \end{tabular}
   \end{myboxed}
   %
@@ -977,7 +963,7 @@
     \textbf{… remove tick labels ?}\\
     \hspace*{2.5mm}~$\rightarrow$ ax.set\_[xy]ticklabels([])\\
     \textbf{… rotate tick labels ?}\\
-    \hspace*{2.5mm}~$\rightarrow$ ax.set\_[xy]ticks(rotation=90)\\
+    \hspace*{2.5mm}~$\rightarrow$ ax.tick\_params(axis="x", rotation=90)\\
     \textbf{… hide top spine?}\\
     \hspace*{2.5mm}~$\rightarrow$ ax.spines['top'].set\_visible(False)\\
     \textbf{… hide legend border?}\\
@@ -1014,12 +1000,12 @@
     plot(X, Y, marker="o", ls="")  \hfill fast%
     \vskip.5\baselineskip
     %
-    \textcolor{red}{for i in range(n): plot(X[i]) \hfill slow}\\
-    plot(sum([x+[None] for x in X],[])) \hfill fast%
+    \textcolor{red}{for i in range(n): plot(i, X[i], "o") \hfill slow}\\
+    plot(X, marker="o", ls="") \hfill fast%
     \vskip.5\baselineskip
     %
-    \textcolor{red}{cla(), imshow(…), canvas.draw() \hfill slow}\\
-    im.set\_data(…), canvas.draw() \hfill fast%
+    \textcolor{red}{cla(); imshow(…); canvas.draw() \hfill slow}\\
+    im.set\_data(…); canvas.draw() \hfill fast%
     \vskip.1\baselineskip
     }
   \end{myboxed}
@@ -1028,12 +1014,12 @@
   %
   \begin{myboxed}{Beyond Matplotlib}
         \smallskip
-    \href{https://seaborn.pydata.org/}{\textbf{Seaborn}}: Statistical Data Visualization\\
-    \href{https://scitools.org.uk/cartopy/docs/latest/}{\textbf{Cartopy}}: Geospatial Data Processing\\
-    \href{https://yt-project.org/doc/index.html}{\textbf{yt}}: Volumetric data Visualization\\
+    \href{https://seaborn.pydata.org/}{\textbf{Seaborn}}: Statistical data visualization\\
+    \href{https://scitools.org.uk/cartopy/docs/latest/}{\textbf{Cartopy}}: Geospatial data processing\\
+    \href{https://yt-project.org/doc/index.html}{\textbf{yt}}: Volumetric data visualization\\
     \href{https://mpld3.github.io}{\textbf{mpld3}}: Bringing Matplotlib to the browser\\
     \href{https://datashader.org/}{\textbf{Datashader}}: Large data processing pipeline\\
-    \href{https://plotnine.readthedocs.io/en/latest/}{\textbf{plotnine}}: A Grammar of Graphics for Python
+    \href{https://plotnine.org/}{\textbf{plotnine}}: A grammar of graphics for Python
   \end{myboxed}
   %
   \begin{center}

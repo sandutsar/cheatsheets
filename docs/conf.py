@@ -14,7 +14,7 @@ author = "Matplotlib Developers"
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = []
+extensions = ["sphinx_design"]
 
 # Add any paths that contain templates here, relative to this directory.
 
@@ -31,8 +31,7 @@ html_css_files = ['css/normalize.css', 'css/landing.css']
 html_theme = "mpl_sphinx_theme"
 html_favicon = "_static/favicon.ico"
 html_theme_options = {
-    "logo_link": "https://matplotlib.org/stable/",
-    "native_site": False,
+    "navbar_links": ("absolute", "server-stable"),
 }
 html_sidebars = {
     "**": []

@@ -3,9 +3,19 @@
 # Author:  Nicolas P. Rougier
 # License: BSD
 # ----------------------------------------------------------------------------
+import pathlib
+
 import numpy as np
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib.ticker import AutoMinorLocator, MultipleLocator, FuncFormatter
+
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
+
+mpl.style.use([
+    ROOT_DIR / 'styles/base.mplstyle',
+])
 
 np.random.seed(123)
 
@@ -14,8 +24,7 @@ Y1 = 3+np.cos(X)
 Y2 = 1+np.cos(1+X/0.75)/2
 Y3 = np.random.uniform(Y1, Y2, len(X))
 
-fig = plt.figure(figsize=(8, 8))
-ax = fig.add_subplot(1, 1, 1, aspect=1)
+(fig, ax) = plt.subplots(figsize=(8, 8), subplot_kw=dict(aspect=1))
 
 
 def minor_tick(x, pos):
@@ -136,5 +145,5 @@ ax.annotate('', xy=(3.15, 0.0), xytext=(3.45, 0.45), color=color,
                             connectionstyle="arc3",
                             color=color))
 
-plt.savefig("../figures/anatomy.pdf")
+fig.savefig(ROOT_DIR / "figures/anatomy.pdf")
 # plt.show()
